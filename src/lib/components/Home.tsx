@@ -1,7 +1,6 @@
 import {Col, Flex, Input, Row, Select, Image} from "antd";
 import { Typography } from 'antd';
 import {RobinCollapse} from "../robin-ui/RobinCollapse/RobinCollapse.tsx";
-import {RobinTab} from "../robin-ui/RobinTab/RobinTab.tsx";
 
 const { Paragraph, Title } = Typography;
 
@@ -106,7 +105,7 @@ export function Home() {
 
                 </Flex>
                 <Flex className='px-12 w-80 '>
-                    <RobinTab/>
+                    ok
                 </Flex>
             </Col>
 

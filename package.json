@@ -17,7 +17,9 @@
     "flag-icons": "^7.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0"
+    "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-sticky-box": "^2.0.5"
   },
   "devDependencies": {
     "@types/node-sass": "^4.11.7",

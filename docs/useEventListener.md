@@ -10,7 +10,7 @@ The useEventListener hook is a custom React hook that allows you to attach an ev
 
 ## Usage
 
-```jsx
+```tsx
 import React from 'react';
 import { useEventListener } from './useEventListener';
 

@@ -105,9 +105,9 @@ export function Home() {
                     </Row>
 
                 </Flex>
-                {/*<Flex className='px-12 w-80 '>*/}
-                {/*    <RobinTab/>*/}
-                {/*</Flex>*/}
+                <Flex className='px-12 w-80 '>
+                    <RobinTab/>
+                </Flex>
             </Col>
 
         </>

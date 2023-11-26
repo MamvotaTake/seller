@@ -24,10 +24,10 @@ export function RobinCollapse() {
                         {/*</p>*/}
                         <Collapse
                             collapsible="header"
-                            defaultActiveKey={['1']}
+                            defaultActiveKey={['2']}
                             bordered={false}
                             style={{color: 'white'}}
-                            expandIconPosition="right"
+                            expandIconPosition="end"
                             expandIcon={({ isActive }) => isActive  ? <MinusOutlined style={styleIcon} /> : <PlusOutlined style={styleIcon} />}
                             className="w-full text-xl   font-semibold bg-gradient-to-r from-gray-300 to-cyan-900"
                             items={[
@@ -43,9 +43,9 @@ export function RobinCollapse() {
 
                         <Collapse
                             collapsible="header"
-                            defaultActiveKey={['1']}
+                            defaultActiveKey={['2']}
                             bordered={false}
-                            expandIconPosition="right"
+                            expandIconPosition="end"
                             expandIcon={({ isActive }) => isActive  ? <MinusOutlined style={styleIcon} /> : <PlusOutlined style={styleIcon} />}
                             className="w-full text-xl font-semibold text-stone-300 bg-gradient-to-r from-gray-300 to-cyan-900"
                             items={[
@@ -62,9 +62,9 @@ export function RobinCollapse() {
 
                         <Collapse
                             collapsible="header"
-                            defaultActiveKey={['1']}
+                            defaultActiveKey={['2']}
                             bordered={false}
-                            expandIconPosition="right"
+                            expandIconPosition="end"
                             expandIcon={({ isActive }) => isActive  ? <MinusOutlined style={styleIcon}/> : <PlusOutlined style={styleIcon} />}
                             className="w-full z-10 text-xl font-semibold text-stone-300 bg-gradient-to-r from-gray-300 to-cyan-900"
                             items={[

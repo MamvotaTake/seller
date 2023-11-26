@@ -105,7 +105,7 @@ export function Home() {
 
                 </Flex>
                 <Flex className='px-12 w-80 '>
-                    ok
+
                 </Flex>
             </Col>
 

@@ -1,4 +1,5 @@
 import {DependencyList, useEffect, useRef} from "react";
+import {off, on} from "../utils/utils.ts";
 
 export type KeyboardEventHandler = (event: KeyboardEvent) => void
 export type EventHandler = (event: Event) => void
@@ -34,10 +35,12 @@ export function useEventListener(eventName: string, handler: EventHandler | Keyb
 
         const eventListener: EventHandler = (event: Event) => savedHandler.current(event);
 
-        element?.addEventListener(eventName, eventListener);
+        // element?.addEventListener(eventName, eventListener);
+        on(element, eventName, eventListener);
 
         return () => {
-            element?.removeEventListener(eventName, eventListener);
+            // element?.removeEventListener(eventName, eventListener);
+            off(element, eventName, eventListener);
         }
 
     }, [eventName, element, ...(deps || [])]);

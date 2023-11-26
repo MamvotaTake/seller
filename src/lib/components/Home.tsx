@@ -105,7 +105,6 @@ export function Home() {
 
                 </Flex>
 
-
             </Col>
 
         </>

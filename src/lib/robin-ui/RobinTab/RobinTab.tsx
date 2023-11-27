@@ -3,8 +3,8 @@ import { AlignType } from 'rc-trigger/lib/interface'
 import {useSliderPositioning} from "../../hooks/useSliderPositioning.ts";
 import {BsInfo} from "react-icons/bs";
 import {clsx} from "clsx";
-import {Tooltip} from "antd";
 import Link from "antd/lib/typography/Link";
+import {Tooltip} from "../Tooltip";
 
 /** A tab that represents one of the options, but doesn't have any content. Render tab-dependent UI yourself. */
 export type AbstractRobinTab<T extends  string | number> = {

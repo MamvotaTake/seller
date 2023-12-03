@@ -1,4 +1,4 @@
-import {Header} from "./Header.tsx";
+import {Header} from "./Header/Header.tsx";
 import {Home} from "./Home.tsx";
 import {Flex} from "antd";
 

@@ -1,8 +1,8 @@
-import {Logo} from "./Logo.tsx";
+import {Logo} from "../Logo.tsx";
 import {Button, Flex, Modal} from "antd";
 import {MenuOutlined} from "@ant-design/icons";
 import {useState} from "react";
-import {SideMenu} from "./Menu.tsx";
+import {SideMenu} from "../Menu.tsx";
 import {MdMenuOpen} from "react-icons/md";
 import {useInView} from "react-intersection-observer";
 

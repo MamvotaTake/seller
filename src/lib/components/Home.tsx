@@ -1,6 +1,7 @@
 import {Col, Flex, Input, Row, Select, Image} from "antd";
 import { Typography } from 'antd';
 import {RobinCollapse} from "../robin-ui/RobinCollapse/RobinCollapse.tsx";
+import {Spinner} from "../robin-ui/Spinner/Spinner";
 
 const { Paragraph, Title } = Typography;
 
@@ -36,6 +37,8 @@ export function Home() {
                         Registration is simple, logistics is on us, and for those who is a sales novice
                         we got all necessary tools to jump in faster.
                     </Paragraph>
+                    <Spinner/>
+
                     {/*<Flex className='mt-14'>*/}
                     {/*    /!*<Input addonBefore={selectBefore} size="large" bordered={false} placeholder="Phone number" className="cursor-pointer flex items-center w-[30rem] rounded-lg text-lg py-1 h-14 hover:h-20 hover:w-[30.5rem] transition-all duration-700 bg-gradient-to-r from-cyan-500 to-blue-500"/>*!/*/}
                     {/*</Flex>*/}

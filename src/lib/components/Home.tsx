@@ -1,52 +1,35 @@
-import {Col, Flex, Input, Row, Select, Image} from "antd";
+import {Col, Flex,  Row,  Image} from "antd";
 import { Typography } from 'antd';
 import {RobinCollapse} from "../robin-ui/RobinCollapse/RobinCollapse.tsx";
-import {LemonInput} from "../robin-ui/RobinInput/RobinInput";
-import {RobinButton} from "../robin-ui/RobinButton";
+import {ReactNode} from "react";
+import {RobinInput} from "../robin-ui/RobinInput";
+
+
 
 const { Paragraph, Title } = Typography;
 
-const selectBefore = (
-    <Select defaultValue="+263" bordered={false} className='w-24 h-12 py-1 bg-gradient-to-r from-cyan-500 to-cyan-500'
-            options={[
-                {
-                    value: '+266',
-                    label: '+266',
-                },
-                {
-                    value: '+263',
-                    label: '+263',
-                },
-                {
-                    value: '+27',
-                    label: '+27',
-                }
-            ]}
-    />
-);
-export function Home() {
+
+export function Home({currentRef}: {currentRef: ReactNode}) {
+
     return (
         <>
-            <Col className='space-y-16 mt-24'>
+            <Col className='space-y-16'>
                 <Flex vertical align='center' className='py-16'>
                     <h1 className='flex leading-none flex-col text-7xl items-center font-extrabold'>Any business will find a place on
                         <span className='bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text inline-block'>
-                      ROBIN
-                  </span></h1>
-
+                            ROBIN
+                        </span>
+                    </h1>
                     <Paragraph style={{textAlign: 'center', maxWidth: '50rem', fontSize: '1.6rem', marginTop: '3rem'}}>
                         Launch your own store today!
                         Registration is simple, logistics is on us, and for those who is a sales novice
                         we got all necessary tools to jump in faster.
                     </Paragraph>
-                    <RobinButton type='primary'>Create Profile/Login</RobinButton>
 
-                    {/*<Flex className='mt-14'>*/}
-                    {/*    /!*<Input addonBefore={selectBefore} size="large" bordered={false} placeholder="Phone number" className="cursor-pointer flex items-center w-[30rem] rounded-lg text-lg py-1 h-14 hover:h-20 hover:w-[30.5rem] transition-all duration-700 bg-gradient-to-r from-cyan-500 to-blue-500"/>*!/*/}
-                    {/*</Flex>*/}
+                    <RobinInput  size='medium' placeholder='Enter phone number!' className="w-80 bg-blue-700/30 py-4"/>
 
                 </Flex>
-                <Flex  className='flex justify-center  bg-gradient-to-r from-gray-900 to-cyan-900 py-16'>
+                <Flex ref={currentRef}  className='flex justify-center  bg-gradient-to-r from-gray-900 to-cyan-900 py-16'>
                     <Row align={"stretch"}  className="flex gap-8 ">
                         <Col className='w-[40rem] space-y-6'>
                             <Title style={{color: 'white', fontSize: '3rem', fontWeight: 'bold'}}>Join us, we will grow together</Title>

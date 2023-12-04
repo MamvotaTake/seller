@@ -1,4 +1,4 @@
-.LemonInput {
+.RobinInput {
   display: flex;
   gap: 0.25rem;
   align-items: center;
@@ -11,7 +11,6 @@
   text-align: left;
   cursor: text;
   background: none;
-  background-color: blue;
   border: 1px solid var(--border);
   border-radius: var(--radius);
 
@@ -23,7 +22,7 @@
     }
   }
 
-  &.LemonInput--focused:not([aria-disabled='true']) {
+  &.RobinInput--focused:not([aria-disabled='true']) {
     border-color: var(--primary-3000);
 
     .posthog-3000 & {
@@ -31,16 +30,16 @@
     }
   }
 
-  &.LemonInput--transparent-background {
+  &.RobinInput--transparent-background {
     background-color: inherit;
   }
 
   .Field--error &,
-  &.LemonInput--status-danger {
+  &.RobinInput--status-danger {
     border-color: var(--danger) !important; // The error border overrides hover/focus higlighting
   }
 
-  .LemonInput__input {
+  .RobinInput__input {
     align-self: stretch; // Improves selectability
     width: 100%;
     text-overflow: ellipsis;
@@ -54,7 +53,7 @@
     }
   }
 
-  .LemonIcon {
+  .RobinIcon {
     flex-shrink: 0;
     width: 1em;
     height: 1em;
@@ -63,27 +62,27 @@
     transition: color 200ms ease;
   }
 
-  &.LemonInput--small {
+  &.RobinInput--small {
     min-height: 2rem;
     padding: 0.125rem 0.25rem;
 
-    .LemonIcon {
+    .RobinIcon {
       font-size: 1.25rem;
     }
   }
 
-  &.LemonInput--has-content {
-    > .LemonIcon {
+  &.RobinInput--has-content {
+    > .RobinIcon {
       color: var(--primary-3000);
     }
   }
 
-  &.LemonInput--type-search {
+  &.RobinInput--type-search {
     // NOTE Design: Search inputs are given a specific small width
     max-width: 240px;
   }
 
-  &.LemonInput--full-width {
+  &.RobinInput--full-width {
     width: 100%;
     max-width: 100%;
   }

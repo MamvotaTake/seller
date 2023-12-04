@@ -4,15 +4,14 @@ import {MenuOutlined} from "@ant-design/icons";
 import {useState} from "react";
 import {SideMenu} from "../Menu.tsx";
 import {MdMenuOpen} from "react-icons/md";
-import {useInView} from "react-intersection-observer";
 import {RobinButton} from "../../robin-ui/RobinButton";
+import './Header.scss'
 
-export function Header() {
+type Props={inView: boolean}
+
+export function Header({ inView}: Props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const {ref, inView} = useInView({
-        threshold: 0.5,
 
-    })
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -26,19 +25,32 @@ export function Header() {
     };
     return (
         <>
-            <Flex ref={ref}  className='backdrop-blur-lg bg-white/30 text-blue-50 z-10 fixed top-0 left-0 right-0' >
-                <Flex style={{width: '100%'}} justify="space-between" className='px-12 mt-8 mb-8 '>
-                    <Logo/>
-                    {!inView && <RobinButton  type='primary' >Create Profile/Login</RobinButton>}
-                    <span onClick={showModal} className='cursor-pointer hover:text-blue-800 transition-all duration-300'>
+            <Flex style={{width: '100%'}} justify="space-between" className='relative flex justify-center items-center py-12  '>
+                <Logo/>
+                <span onClick={showModal} className='absolute right-0 px-12  cursor-pointer hover:text-blue-800 transition-all duration-300'>
                         {isModalOpen ? <MdMenuOpen className='text-4xl text-zinc-950'/> : <MenuOutlined className='text-xl text-zinc-950'/>}
                     </span>
 
-                    <Modal width={400}  open={isModalOpen} onOk={handleOk}  onCancel={handleCancel}  footer={null}>
-                        <SideMenu/>
-                    </Modal>
-                </Flex>
+                <Modal width={400}  open={isModalOpen} onOk={handleOk}  onCancel={handleCancel}  footer={null}>
+                    <SideMenu/>
+                </Modal>
             </Flex>
+
+            {
+                inView && <Flex className='Header' >
+                    <Flex style={{width: '100%'}} justify="space-between" className='px-12 mt-8 mb-8 '>
+                        <Logo/>
+                        <RobinButton  type='primary' >Create Profile/Login</RobinButton>
+                        <span onClick={showModal} className='cursor-pointer hover:text-blue-800 transition-all duration-300'>
+                        {isModalOpen ? <MdMenuOpen className='text-4xl text-zinc-950'/> : <MenuOutlined className='text-xl text-zinc-950'/>}
+                    </span>
+
+                        <Modal width={400}  open={isModalOpen} onOk={handleOk}  onCancel={handleCancel}  footer={null}>
+                            <SideMenu/>
+                        </Modal>
+                    </Flex>
+                </Flex>
+            }
         </>
     );
 }

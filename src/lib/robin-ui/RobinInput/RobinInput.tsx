@@ -1,13 +1,15 @@
 import './RobinInput.scss'
 
-// import { IconClose, IconEyeHidden, IconEyeVisible, IconMagnifier } from 'lib/lemon-ui/icons'
+// import { IconClose, IconEyeHidden, IconEyeVisible, IconMagnifier } from 'lib/Robin-ui/icons'
 
 import React, { useRef, useState } from 'react'
 import {RobinButton} from "../RobinButton/RobinButton.tsx";
 import clsx from "clsx";
 import {SlMagnifier} from "react-icons/sl";
+import {BsEye} from "react-icons/bs";
+import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
 
-interface LemonInputPropsBase
+interface RobinInputPropsBase
     extends Pick<
         // NOTE: We explicitly pick rather than omit to ensure these components aren't used incorrectly
         React.InputHTMLAttributes<HTMLInputElement>,
@@ -51,15 +53,15 @@ interface LemonInputPropsBase
     stopPropagation?: boolean
 }
 
-export interface LemonInputPropsText extends LemonInputPropsBase {
+export interface RobinInputPropsText extends RobinInputPropsBase {
     type?: 'text' | 'email' | 'search' | 'url' | 'password'
     value?: string
     defaultValue?: string
     onChange?: (newValue: string) => void
 }
 
-export interface LemonInputPropsNumber
-    extends LemonInputPropsBase,
+export interface RobinInputPropsNumber
+    extends RobinInputPropsBase,
         Pick<React.InputHTMLAttributes<HTMLInputElement>, 'step' | 'min' | 'max'> {
     type: 'number'
     value?: number
@@ -67,9 +69,9 @@ export interface LemonInputPropsNumber
     onChange?: (newValue: number | undefined) => void
 }
 
-export type LemonInputProps = LemonInputPropsText | LemonInputPropsNumber
+export type RobinInputProps = RobinInputPropsText | RobinInputPropsNumber
 
-export const LemonInput = React.forwardRef<HTMLInputElement, LemonInputProps>(function _LemonInput(
+export const RobinInput = React.forwardRef<HTMLInputElement, RobinInputProps>(function _RobinInput(
     {
         className,
         onChange,
@@ -110,7 +112,7 @@ export const LemonInput = React.forwardRef<HTMLInputElement, LemonInputProps>(fu
             <RobinButton
                 size="small"
                 noPadding
-                icon={passwordVisible ? "IconEyeHidden" : "IconEyeVisible"}
+                icon={passwordVisible ? <AiOutlineEye/> : <AiOutlineEyeInvisible/>}
                 status="primary-alt"
                 tooltip={passwordVisible ? 'Hide password' : 'Show password'}
                 onClick={(e) => {
@@ -146,14 +148,14 @@ export const LemonInput = React.forwardRef<HTMLInputElement, LemonInputProps>(fu
     return (
         <span
             className={clsx(
-                'LemonInput',
-                status !== 'default' && `LemonInput--status-${status}`,
-                type && `LemonInput--type-${type}`,
-                size && `LemonInput--${size}`,
-                fullWidth && 'LemonInput--full-width',
-                value && 'LemonInput--has-content',
-                !textProps.disabled && focused && 'LemonInput--focused',
-                transparentBackground && 'LemonInput--transparent-background',
+                'RobinInput',
+                status !== 'default' && `RobinInput--status-${status}`,
+                type && `RobinInput--type-${type}`,
+                size && `RobinInput--${size}`,
+                fullWidth && 'RobinInput--full-width',
+                value && 'RobinInput--has-content',
+                !textProps.disabled && focused && 'RobinInput--focused',
+                transparentBackground && 'RobinInput--transparent-background',
                 className
             )}
             aria-disabled={textProps.disabled}
@@ -161,7 +163,7 @@ export const LemonInput = React.forwardRef<HTMLInputElement, LemonInputProps>(fu
         >
             {prefix}
             <input
-                className="LemonInput__input"
+                className="RobinInput__input"
                 ref={inputRef}
                 type={(type === 'password' && passwordVisible ? 'text' : type) || 'text'}
                 value={value}

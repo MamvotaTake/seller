@@ -1,13 +1,15 @@
-import './LemonInput.scss'
+import './RobinInput.scss'
 
 // import { IconClose, IconEyeHidden, IconEyeVisible, IconMagnifier } from 'lib/lemon-ui/icons'
 
 import React, { useRef, useState } from 'react'
 import {RobinButton} from "../RobinButton/RobinButton.tsx";
+import clsx from "clsx";
+import {SlMagnifier} from "react-icons/sl";
 
 interface LemonInputPropsBase
     extends Pick<
-        // NOTE: We explicitly pick rather than omit to ensure thes components aren't used incorrectly
+        // NOTE: We explicitly pick rather than omit to ensure these components aren't used incorrectly
         React.InputHTMLAttributes<HTMLInputElement>,
         | 'className'
         | 'onFocus'
@@ -69,20 +71,20 @@ export type LemonInputProps = LemonInputPropsText | LemonInputPropsNumber
 
 export const LemonInput = React.forwardRef<HTMLInputElement, LemonInputProps>(function _LemonInput(
     {
-        // className,
+        className,
         onChange,
         onFocus,
         onBlur,
         onPressEnter,
-        // status = 'default',
+        status = 'default',
         allowClear, // Default handled inside the component
-        // fullWidth,
+        fullWidth,
         prefix,
         suffix,
         type,
         value,
-        // transparentBackground = false,
-        // size = 'medium',
+        transparentBackground = false,
+        size = 'medium',
         stopPropagation = false,
         ...textProps
     },
@@ -102,20 +104,20 @@ export const LemonInput = React.forwardRef<HTMLInputElement, LemonInputProps>(fu
 
     if (type === 'search') {
         allowClear = allowClear ?? true
-        // prefix = prefix ?? "<IconMagnifier />"
+        prefix = prefix ?? <SlMagnifier />
     } else if (type === 'password') {
         suffix = suffix ?? (
             <RobinButton
-                // size="small"
-                // noPadding
-                // icon={passwordVisible ? "IconEyeHidden" : "IconEyeVisible"}
-                // status="primary-alt"
-                // tooltip={passwordVisible ? 'Hide password' : 'Show password'}
-                // onClick={(e) => {
-                //     e.stopPropagation()
-                //     focus()
-                //     setPasswordVisible(!passwordVisible)
-                // }}
+                size="small"
+                noPadding
+                icon={passwordVisible ? "IconEyeHidden" : "IconEyeVisible"}
+                status="primary-alt"
+                tooltip={passwordVisible ? 'Hide password' : 'Show password'}
+                onClick={(e) => {
+                    e.stopPropagation()
+                    focus()
+                    setPasswordVisible(!passwordVisible)
+                }}
             />
         )
     }
@@ -123,37 +125,37 @@ export const LemonInput = React.forwardRef<HTMLInputElement, LemonInputProps>(fu
     if (allowClear && value) {
         suffix = (
             <RobinButton
-                // size="small"
-                // noPadding
-                // icon={"<IconClose />"}
-                // status="primary-alt"
-                // tooltip="Clear input"
-                // onClick={(e) => {
-                //     e.stopPropagation()
-                //     if (type === 'number') {
-                //         onChange?.(0)
-                //     } else {
-                //         onChange?.('')
-                //     }
-                //     focus()
-                // }}
+                size="small"
+                noPadding
+                icon={"<IconClose />"}
+                status="primary-alt"
+                tooltip="Clear input"
+                onClick={(e) => {
+                    e.stopPropagation()
+                    if (type === 'number') {
+                        onChange?.(0)
+                    } else {
+                        onChange?.('')
+                    }
+                    focus()
+                }}
             />
         )
     }
 
     return (
         <span
-            // className={clsx(
-            //     'LemonInput',
-            //     status !== 'default' && `LemonInput--status-${status}`,
-            //     type && `LemonInput--type-${type}`,
-            //     size && `LemonInput--${size}`,
-            //     fullWidth && 'LemonInput--full-width',
-            //     value && 'LemonInput--has-content',
-            //     !textProps.disabled && focused && 'LemonInput--focused',
-            //     transparentBackground && 'LemonInput--transparent-background',
-            //     className
-            // )}
+            className={clsx(
+                'LemonInput',
+                status !== 'default' && `LemonInput--status-${status}`,
+                type && `LemonInput--type-${type}`,
+                size && `LemonInput--${size}`,
+                fullWidth && 'LemonInput--full-width',
+                value && 'LemonInput--has-content',
+                !textProps.disabled && focused && 'LemonInput--focused',
+                transparentBackground && 'LemonInput--transparent-background',
+                className
+            )}
             aria-disabled={textProps.disabled}
             onClick={() => focus()}
         >

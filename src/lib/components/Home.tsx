@@ -1,7 +1,8 @@
 import {Col, Flex, Input, Row, Select, Image} from "antd";
 import { Typography } from 'antd';
 import {RobinCollapse} from "../robin-ui/RobinCollapse/RobinCollapse.tsx";
-import {Spinner} from "../robin-ui/Spinner/Spinner";
+import {LemonInput} from "../robin-ui/RobinInput/RobinInput";
+import {RobinButton} from "../robin-ui/RobinButton";
 
 const { Paragraph, Title } = Typography;
 
@@ -32,12 +33,13 @@ export function Home() {
                         <span className='bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text inline-block'>
                       ROBIN
                   </span></h1>
+
                     <Paragraph style={{textAlign: 'center', maxWidth: '50rem', fontSize: '1.6rem', marginTop: '3rem'}}>
                         Launch your own store today!
                         Registration is simple, logistics is on us, and for those who is a sales novice
                         we got all necessary tools to jump in faster.
                     </Paragraph>
-                    <Spinner/>
+                    <RobinButton type='primary'>Create Profile/Login</RobinButton>
 
                     {/*<Flex className='mt-14'>*/}
                     {/*    /!*<Input addonBefore={selectBefore} size="large" bordered={false} placeholder="Phone number" className="cursor-pointer flex items-center w-[30rem] rounded-lg text-lg py-1 h-14 hover:h-20 hover:w-[30.5rem] transition-all duration-700 bg-gradient-to-r from-cyan-500 to-blue-500"/>*!/*/}

@@ -26,10 +26,10 @@ export function Home({currentRef}: {currentRef: ReactNode}) {
                         we got all necessary tools to jump in faster.
                     </Paragraph>
 
-                    <RobinInput  size='medium' placeholder='Enter phone number!' className="w-80 bg-blue-700/30 py-4"/>
+                    <RobinInput  size='medium' aria-label="Close" placeholder='Enter phone number!' className="w-96 bg-zinc-100/80 py-4"/>
 
                 </Flex>
-                <Flex ref={currentRef}  className='flex justify-center  bg-gradient-to-r from-gray-900 to-cyan-900 py-16'>
+                <Flex ref={currentRef}  className='flex justify-center  bg-gradient-to-r from-gray-900 to-cyan-900  py-16'>
                     <Row align={"stretch"}  className="flex gap-8 ">
                         <Col className='w-[40rem] space-y-6'>
                             <Title style={{color: 'white', fontSize: '3rem', fontWeight: 'bold'}}>Join us, we will grow together</Title>

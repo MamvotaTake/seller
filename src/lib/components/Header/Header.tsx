@@ -6,6 +6,7 @@ import {SideMenu} from "../Menu.tsx";
 import {MdMenuOpen} from "react-icons/md";
 import {RobinButton} from "../../robin-ui/RobinButton";
 import './Header.scss'
+import clsx from "clsx";
 
 type Props={inView: boolean}
 
@@ -37,7 +38,7 @@ export function Header({ inView}: Props) {
             </Flex>
 
             {
-                inView && <Flex className='Header' >
+                inView &&  <Flex className={clsx('Header', inView)} >
                     <Flex style={{width: '100%'}} justify="space-between" className='px-12 mt-8 mb-8 '>
                         <Logo/>
                         <RobinButton  type='primary' >Create Profile/Login</RobinButton>
